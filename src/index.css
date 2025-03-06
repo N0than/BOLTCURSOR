@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .light-bg-gray-200 {
+    @apply bg-gray-200;
+  }
+  .light-bg-gray-400 {
+    @apply bg-gray-400;
+  }
+  .light-bg-gray-300 {
+    @apply bg-gray-300;
+  }
+  .light-text-gray-900 {
+    @apply text-gray-900;
+  }
+  .light-text-white {
+    @apply text-white;
+  }
+}
+
+body {
+  @apply text-gray-100 dark:text-gray-900;
+  background: -webkit-linear-gradient(90deg, #446488, #3b60ab, #5f52c2);
+  background: linear-gradient(90deg, #446488, #3b60ab, #5f52c2);
+}
+
+body.light {
+  background: -webkit-linear-gradient(90deg, #e0e7ff, #c7d2fe, #e0e7ff);
+  background: linear-gradient(90deg, #e0e7ff, #c7d2fe, #e0e7ff);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900 dark:bg-gray-200 light-bg-gray-200;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-700 dark:bg-gray-400 light-bg-gray-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-600 dark:bg-gray-300 light-bg-gray-300;
+}
+
+/* Shake animation */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+.animate-shake {
+  animation: shake 0.5s ease-in-out;
+}

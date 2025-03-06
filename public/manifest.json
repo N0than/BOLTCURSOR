@@ -1,0 +1,16 @@
+{
+  "name": "Audience Masters",
+  "short_name": "Audience Masters",
+  "description": "Pronostiquez l'audience des programmes TV et comparez vos prédictions",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ]
+}
