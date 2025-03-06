@@ -1,0 +1,21 @@
+-- Drop existing policies to avoid conflicts
+DROP POLICY IF EXISTS "Shows viewable by everyone" ON public.shows;
+DROP POLICY IF EXISTS "Shows manageable by admins" ON public.shows;
+
+-- Make sure RLS is enabled
+ALTER TABLE public.shows ENABLE ROW LEVEL SECURITY;
+
+-- Create new policies for shows table
+CREATE POLICY "Shows viewable by everyone"
+ON public.shows FOR SELECT
+USING (true);
+
+CREATE POLICY "Shows manageable by authenticated users"
+ON public.shows
+FOR ALL
+TO authenticated
+USING (true)
+WITH CHECK (true);
+
+-- Grant necessary permissions
+GRANT ALL ON public.shows TO authenticated;
